@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+
+<head>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"
+		integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="/tabletemplate.js"></script>
+	<script>
+		$(document).ready(function() {
+      var options = {
+        table_data : [
+          {
+            table_name : "subTableContainer1",
+            table_width : "300px",
+            table_type : "basic",
+            headers : {
+              head_id : "desc",
+              head_text : "Description" 
+            },
+            body : {
+              data : [
+                {data_id : "101", data_text : "Description1"},
+                {data_id : "102", data_text : "Description2"},
+                {data_id : "103", data_text : "Description3"},
+                {data_id : "104", data_text : "Description4"},
+                {data_id : "105", data_text : "Description5"},
+                {data_id : "106", data_text : "Description6"},
+                {data_id : "107", data_text : "Description7"},
+                {data_id : "108", data_text : "Description8"},
+                {data_id : "109", data_text : "Description9"},
+                {data_id : "110", data_text : "Description10"}
+              ]
+            }
+          },
+          {
+            table_name : "subTableContainer2",
+            table_width : "140px",
+            table_type : "basic",
+            headers : {
+              head_id : "ytd",
+              head_text : "YTD20"
+            },
+            body : {
+              data : [
+                {data_id : "101", data_text : "1000"},
+                {data_id : "102", data_text : "2000"},
+                {data_id : "103", data_text : "3000"},
+                {data_id : "104", data_text : "4000"},
+                {data_id : "105", data_text : "5000"},
+                {data_id : "106", data_text : "6000"},
+                {data_id : "107", data_text : "7000"},
+                {data_id : "108", data_text : "8000"},
+                {data_id : "109", data_text : "9000"},
+                {data_id : "110", data_text : "10000"}
+              ]
+            }
+          },
+          {
+            table_name : "subTableContainer3",
+            table_width : "770px",
+            table_type : "advanced",
+            headers : {
+              rows : [
+                {
+                  columns : [
+                    {head_id : "500", head_isEC: true, head_isStatic: true, head_parent : null, head_text : "Q1-20"},
+                    {head_id : "600", head_isEC: true, head_isStatic: true, head_parent : null, head_text : "Q2-20"},
+                    {head_id : "700", head_isEC: true, head_isStatic: true, head_parent : null, head_text : "Q3-20"},
+                    {head_id : "800", head_isEC: true, head_isStatic: true, head_parent : null, head_text : "Q4-20"}
+                  ]
+                },
+                {
+                  columns : [
+                    {head_id : "97", head_isEC: false, head_isStatic: true, head_parent : "500", head_text : "Jan20"},
+                    {head_id : "98", head_isEC: false, head_isStatic: true, head_parent : "500", head_text : "Feb20"},
+                    {head_id : "99", head_isEC: false, head_isStatic: true, head_parent : "500", head_text : "Mar20"},
+                    {head_id : "100", head_isEC: false, head_isStatic: true, head_parent : "600", head_text : "Apr20"},
+                    {head_id : "101", head_isEC: false, head_isStatic: true, head_parent : "600", head_text : "May20"},
+                    {head_id : "102", head_isEC: false, head_isStatic: true, head_parent : "600", head_text : "Jun20"},
+                    {head_id : "103", head_isEC: false, head_isStatic: true, head_parent : "700", head_text : "Jul20"},
+                    {head_id : "104", head_isEC: false, head_isStatic: true, head_parent : "700", head_text : "Aug20"},
+                    {head_id : "105", head_isEC: false, head_isStatic: true, head_parent : "700", head_text : "Sep20"},
+                    {head_id : "106", head_isEC: false, head_isStatic: true, head_parent : "800", head_text : "Oct20"},
+                    {head_id : "107", head_isEC: false, head_isStatic: true, head_parent : "800", head_text : "Nov20"},
+                    {head_id : "108", head_isEC: false, head_isStatic: true, head_parent : "800", head_text : "Dec20"}
+                  ]
+                },
+                {
+                  columns : [
+                    {head_id : "dol", head_isEC: false, head_isStatic: true, head_parent : "97", head_text : "$"},
+                    {head_id : "per", head_isEC: false, head_isStatic: false, head_parent : "97", head_text : "%"},
+                    {head_id : "dol", head_isEC: false, head_isStatic: true, head_parent : "98", head_text : "$"},
+                    {head_id : "per", head_isEC: false, head_isStatic: false, head_parent : "98", head_text : "%"},
+                    {head_id : "dol", head_isEC: false, head_isStatic: true, head_parent : "99", head_text : "$"},
+                    {head_id : "per", head_isEC: false, head_isStatic: false, head_parent : "99", head_text : "%"},
+                    {head_id : "dol", head_isEC: false, head_isStatic: true, head_parent : "100", head_text : "$"},
+                    {head_id : "per", head_isEC: false, head_isStatic: false, head_parent : "100", head_text : "%"},
+                    {head_id : "dol", head_isEC: false, head_isStatic: true, head_parent : "101", head_text : "$"},
+                    {head_id : "per", head_isEC: false, head_isStatic: false, head_parent : "101", head_text : "%"},
+                    {head_id : "dol", head_isEC: false, head_isStatic: true, head_parent : "102", head_text : "$"},
+                    {head_id : "per", head_isEC: false, head_isStatic: false, head_parent : "102", head_text : "%"},
+                    {head_id : "dol", head_isEC: false, head_isStatic: true, head_parent : "103", head_text : "$"},
+                    {head_id : "per", head_isEC: false, head_isStatic: false, head_parent : "103", head_text : "%"},
+                    {head_id : "dol", head_isEC: false, head_isStatic: true, head_parent : "104", head_text : "$"},
+                    {head_id : "per", head_isEC: false, head_isStatic: false, head_parent : "104", head_text : "%"},
+                    {head_id : "dol", head_isEC: false, head_isStatic: true, head_parent : "105", head_text : "$"},
+                    {head_id : "per", head_isEC: false, head_isStatic: false, head_parent : "105", head_text : "%"},
+                    {head_id : "dol", head_isEC: false, head_isStatic: true, head_parent : "106", head_text : "$"},
+                    {head_id : "per", head_isEC: false, head_isStatic: false, head_parent : "106", head_text : "%"},
+                    {head_id : "dol", head_isEC: false, head_isStatic: true, head_parent : "107", head_text : "$"},
+                    {head_id : "per", head_isEC: false, head_isStatic: false, head_parent : "107", head_text : "%"},
+                    {head_id : "dol", head_isEC: false, head_isStatic: true, head_parent : "108", head_text : "$"},
+                    {head_id : "per", head_isEC: false, head_isStatic: false, head_parent : "108", head_text : "%"}
+                  ]
+                }
+              ]
+            },
+            body : {
+              div_count : 2,
+              col_count : 12,
+              data : [
+                {data_desc_id : "1001", data_head_id : "97", data_subhead_id : "dol", data_text : "100", data_subhead_id1 : "per", data_text1 : "100%"},
+                {data_desc_id : "1001", data_head_id : "98", data_subhead_id : "dol", data_text : "100", data_subhead_id1 : "per", data_text1 : "100%"},
+                {data_desc_id : "1001", data_head_id : "99", data_subhead_id : "dol", data_text : "100", data_subhead_id1 : "per", data_text1 : "100%"},
+                {data_desc_id : "1001", data_head_id : "100", data_subhead_id : "dol", data_text : "100", data_subhead_id1 : "per", data_text1 : "100%"},
+                {data_desc_id : "1001", data_head_id : "101", data_subhead_id : "dol", data_text : "100", data_subhead_id1 : "per", data_text1 : "100%"},
+                {data_desc_id : "1001", data_head_id : "102", data_subhead_id : "dol", data_text : "100", data_subhead_id1 : "per", data_text1 : "100%"},
+                {data_desc_id : "1001", data_head_id : "103", data_subhead_id : "dol", data_text : "100", data_subhead_id1 : "per", data_text1 : "100%"},
+                {data_desc_id : "1001", data_head_id : "104", data_subhead_id : "dol", data_text : "100", data_subhead_id1 : "per", data_text1 : "100%"},
+                {data_desc_id : "1001", data_head_id : "105", data_subhead_id : "dol", data_text : "100", data_subhead_id1 : "per", data_text1 : "100%"},
+                {data_desc_id : "1001", data_head_id : "106", data_subhead_id : "dol", data_text : "100", data_subhead_id1 : "per", data_text1 : "100%"},
+                {data_desc_id : "1001", data_head_id : "107", data_subhead_id : "dol", data_text : "100", data_subhead_id1 : "per", data_text1 : "100%"},
+                {data_desc_id : "1001", data_head_id : "108", data_subhead_id : "dol", data_text : "100", data_subhead_id1 : "per", data_text1 : "100%"},
+                {data_desc_id : "1002", data_head_id : "97", data_subhead_id : "dol", data_text : "200", data_subhead_id1 : "per", data_text1 : "200%"},
+                {data_desc_id : "1002", data_head_id : "98", data_subhead_id : "dol", data_text : "200", data_subhead_id1 : "per", data_text1 : "200%"},
+                {data_desc_id : "1002", data_head_id : "99", data_subhead_id : "dol", data_text : "200", data_subhead_id1 : "per", data_text1 : "200%"},
+                {data_desc_id : "1002", data_head_id : "100", data_subhead_id : "dol", data_text : "200", data_subhead_id1 : "per", data_text1 : "200%"},
+                {data_desc_id : "1002", data_head_id : "101", data_subhead_id : "dol", data_text : "200", data_subhead_id1 : "per", data_text1 : "200%"},
+                {data_desc_id : "1002", data_head_id : "102", data_subhead_id : "dol", data_text : "200", data_subhead_id1 : "per", data_text1 : "200%"},
+                {data_desc_id : "1002", data_head_id : "103", data_subhead_id : "dol", data_text : "200", data_subhead_id1 : "per", data_text1 : "200%"},
+                {data_desc_id : "1002", data_head_id : "104", data_subhead_id : "dol", data_text : "200", data_subhead_id1 : "per", data_text1 : "200%"},
+                {data_desc_id : "1002", data_head_id : "105", data_subhead_id : "dol", data_text : "200", data_subhead_id1 : "per", data_text1 : "200%"},
+                {data_desc_id : "1002", data_head_id : "106", data_subhead_id : "dol", data_text : "200", data_subhead_id1 : "per", data_text1 : "200%"},
+                {data_desc_id : "1002", data_head_id : "107", data_subhead_id : "dol", data_text : "200", data_subhead_id1 : "per", data_text1 : "200%"},
+                {data_desc_id : "1002", data_head_id : "108", data_subhead_id : "dol", data_text : "200", data_subhead_id1 : "per", data_text1 : "200%"},
+                {data_desc_id : "1003", data_head_id : "97", data_subhead_id : "dol", data_text : "300", data_subhead_id1 : "per", data_text1 : "300%"},
+                {data_desc_id : "1003", data_head_id : "98", data_subhead_id : "dol", data_text : "300", data_subhead_id1 : "per", data_text1 : "300%"},
+                {data_desc_id : "1003", data_head_id : "99", data_subhead_id : "dol", data_text : "300", data_subhead_id1 : "per", data_text1 : "300%"},
+                {data_desc_id : "1003", data_head_id : "100", data_subhead_id : "dol", data_text : "300", data_subhead_id1 : "per", data_text1 : "300%"},
+                {data_desc_id : "1003", data_head_id : "101", data_subhead_id : "dol", data_text : "300", data_subhead_id1 : "per", data_text1 : "300%"},
+                {data_desc_id : "1003", data_head_id : "102", data_subhead_id : "dol", data_text : "300", data_subhead_id1 : "per", data_text1 : "300%"},
+                {data_desc_id : "1003", data_head_id : "103", data_subhead_id : "dol", data_text : "300", data_subhead_id1 : "per", data_text1 : "300%"},
+                {data_desc_id : "1003", data_head_id : "104", data_subhead_id : "dol", data_text : "300", data_subhead_id1 : "per", data_text1 : "300%"},
+                {data_desc_id : "1003", data_head_id : "105", data_subhead_id : "dol", data_text : "300", data_subhead_id1 : "per", data_text1 : "300%"},
+                {data_desc_id : "1003", data_head_id : "106", data_subhead_id : "dol", data_text : "300", data_subhead_id1 : "per", data_text1 : "300%"},
+                {data_desc_id : "1003", data_head_id : "107", data_subhead_id : "dol", data_text : "300", data_subhead_id1 : "per", data_text1 : "300%"},
+                {data_desc_id : "1003", data_head_id : "108", data_subhead_id : "dol", data_text : "300", data_subhead_id1 : "per", data_text1 : "300%"},
+                {data_desc_id : "1004", data_head_id : "97", data_subhead_id : "dol", data_text : "400", data_subhead_id1 : "per", data_text1 : "400%"},
+                {data_desc_id : "1004", data_head_id : "98", data_subhead_id : "dol", data_text : "400", data_subhead_id1 : "per", data_text1 : "400%"},
+                {data_desc_id : "1004", data_head_id : "99", data_subhead_id : "dol", data_text : "400", data_subhead_id1 : "per", data_text1 : "400%"},
+                {data_desc_id : "1004", data_head_id : "100", data_subhead_id : "dol", data_text : "400", data_subhead_id1 : "per", data_text1 : "400%"},
+                {data_desc_id : "1004", data_head_id : "101", data_subhead_id : "dol", data_text : "400", data_subhead_id1 : "per", data_text1 : "400%"},
+                {data_desc_id : "1004", data_head_id : "102", data_subhead_id : "dol", data_text : "400", data_subhead_id1 : "per", data_text1 : "400%"},
+                {data_desc_id : "1004", data_head_id : "103", data_subhead_id : "dol", data_text : "400", data_subhead_id1 : "per", data_text1 : "400%"},
+                {data_desc_id : "1004", data_head_id : "104", data_subhead_id : "dol", data_text : "400", data_subhead_id1 : "per", data_text1 : "400%"},
+                {data_desc_id : "1004", data_head_id : "105", data_subhead_id : "dol", data_text : "400", data_subhead_id1 : "per", data_text1 : "400%"},
+                {data_desc_id : "1004", data_head_id : "106", data_subhead_id : "dol", data_text : "400", data_subhead_id1 : "per", data_text1 : "400%"},
+                {data_desc_id : "1004", data_head_id : "107", data_subhead_id : "dol", data_text : "400", data_subhead_id1 : "per", data_text1 : "400%"},
+                {data_desc_id : "1004", data_head_id : "108", data_subhead_id : "dol", data_text : "400", data_subhead_id1 : "per", data_text1 : "400%"},
+                {data_desc_id : "1005", data_head_id : "97", data_subhead_id : "dol", data_text : "500", data_subhead_id1 : "per", data_text1 : "500%"},
+                {data_desc_id : "1005", data_head_id : "98", data_subhead_id : "dol", data_text : "500", data_subhead_id1 : "per", data_text1 : "500%"},
+                {data_desc_id : "1005", data_head_id : "99", data_subhead_id : "dol", data_text : "500", data_subhead_id1 : "per", data_text1 : "500%"},
+                {data_desc_id : "1005", data_head_id : "100", data_subhead_id : "dol", data_text : "500", data_subhead_id1 : "per", data_text1 : "500%"},
+                {data_desc_id : "1005", data_head_id : "101", data_subhead_id : "dol", data_text : "500", data_subhead_id1 : "per", data_text1 : "500%"},
+                {data_desc_id : "1005", data_head_id : "102", data_subhead_id : "dol", data_text : "500", data_subhead_id1 : "per", data_text1 : "500%"},
+                {data_desc_id : "1005", data_head_id : "103", data_subhead_id : "dol", data_text : "500", data_subhead_id1 : "per", data_text1 : "500%"},
+                {data_desc_id : "1005", data_head_id : "104", data_subhead_id : "dol", data_text : "500", data_subhead_id1 : "per", data_text1 : "500%"},
+                {data_desc_id : "1005", data_head_id : "105", data_subhead_id : "dol", data_text : "500", data_subhead_id1 : "per", data_text1 : "500%"},
+                {data_desc_id : "1005", data_head_id : "106", data_subhead_id : "dol", data_text : "500", data_subhead_id1 : "per", data_text1 : "500%"},
+                {data_desc_id : "1005", data_head_id : "107", data_subhead_id : "dol", data_text : "500", data_subhead_id1 : "per", data_text1 : "500%"},
+                {data_desc_id : "1005", data_head_id : "108", data_subhead_id : "dol", data_text : "500", data_subhead_id1 : "per", data_text1 : "500%"},
+                {data_desc_id : "1006", data_head_id : "97", data_subhead_id : "dol", data_text : "600", data_subhead_id1 : "per", data_text1 : "600%"},
+                {data_desc_id : "1006", data_head_id : "98", data_subhead_id : "dol", data_text : "600", data_subhead_id1 : "per", data_text1 : "600%"},
+                {data_desc_id : "1006", data_head_id : "99", data_subhead_id : "dol", data_text : "600", data_subhead_id1 : "per", data_text1 : "600%"},
+                {data_desc_id : "1006", data_head_id : "100", data_subhead_id : "dol", data_text : "600", data_subhead_id1 : "per", data_text1 : "600%"},
+                {data_desc_id : "1006", data_head_id : "101", data_subhead_id : "dol", data_text : "600", data_subhead_id1 : "per", data_text1 : "600%"},
+                {data_desc_id : "1006", data_head_id : "102", data_subhead_id : "dol", data_text : "600", data_subhead_id1 : "per", data_text1 : "600%"},
+                {data_desc_id : "1006", data_head_id : "103", data_subhead_id : "dol", data_text : "600", data_subhead_id1 : "per", data_text1 : "600%"},
+                {data_desc_id : "1006", data_head_id : "104", data_subhead_id : "dol", data_text : "600", data_subhead_id1 : "per", data_text1 : "600%"},
+                {data_desc_id : "1006", data_head_id : "105", data_subhead_id : "dol", data_text : "600", data_subhead_id1 : "per", data_text1 : "600%"},
+                {data_desc_id : "1006", data_head_id : "106", data_subhead_id : "dol", data_text : "600", data_subhead_id1 : "per", data_text1 : "600%"},
+                {data_desc_id : "1006", data_head_id : "107", data_subhead_id : "dol", data_text : "600", data_subhead_id1 : "per", data_text1 : "600%"},
+                {data_desc_id : "1006", data_head_id : "108", data_subhead_id : "dol", data_text : "600", data_subhead_id1 : "per", data_text1 : "600%"},
+                {data_desc_id : "1007", data_head_id : "97", data_subhead_id : "dol", data_text : "700", data_subhead_id1 : "per", data_text1 : "700%"},
+                {data_desc_id : "1007", data_head_id : "98", data_subhead_id : "dol", data_text : "700", data_subhead_id1 : "per", data_text1 : "700%"},
+                {data_desc_id : "1007", data_head_id : "99", data_subhead_id : "dol", data_text : "700", data_subhead_id1 : "per", data_text1 : "700%"},
+                {data_desc_id : "1007", data_head_id : "100", data_subhead_id : "dol", data_text : "700", data_subhead_id1 : "per", data_text1 : "700%"},
+                {data_desc_id : "1007", data_head_id : "101", data_subhead_id : "dol", data_text : "700", data_subhead_id1 : "per", data_text1 : "700%"},
+                {data_desc_id : "1007", data_head_id : "102", data_subhead_id : "dol", data_text : "700", data_subhead_id1 : "per", data_text1 : "700%"},
+                {data_desc_id : "1007", data_head_id : "103", data_subhead_id : "dol", data_text : "700", data_subhead_id1 : "per", data_text1 : "700%"},
+                {data_desc_id : "1007", data_head_id : "104", data_subhead_id : "dol", data_text : "700", data_subhead_id1 : "per", data_text1 : "700%"},
+                {data_desc_id : "1007", data_head_id : "105", data_subhead_id : "dol", data_text : "700", data_subhead_id1 : "per", data_text1 : "700%"},
+                {data_desc_id : "1007", data_head_id : "106", data_subhead_id : "dol", data_text : "700", data_subhead_id1 : "per", data_text1 : "700%"},
+                {data_desc_id : "1007", data_head_id : "107", data_subhead_id : "dol", data_text : "700", data_subhead_id1 : "per", data_text1 : "700%"},
+                {data_desc_id : "1007", data_head_id : "108", data_subhead_id : "dol", data_text : "700", data_subhead_id1 : "per", data_text1 : "700%"},
+                {data_desc_id : "1008", data_head_id : "97", data_subhead_id : "dol", data_text : "800", data_subhead_id1 : "per", data_text1 : "800%"},
+                {data_desc_id : "1008", data_head_id : "98", data_subhead_id : "dol", data_text : "800", data_subhead_id1 : "per", data_text1 : "800%"},
+                {data_desc_id : "1008", data_head_id : "99", data_subhead_id : "dol", data_text : "800", data_subhead_id1 : "per", data_text1 : "800%"},
+                {data_desc_id : "1008", data_head_id : "100", data_subhead_id : "dol", data_text : "800", data_subhead_id1 : "per", data_text1 : "800%"},
+                {data_desc_id : "1008", data_head_id : "101", data_subhead_id : "dol", data_text : "800", data_subhead_id1 : "per", data_text1 : "800%"},
+                {data_desc_id : "1008", data_head_id : "102", data_subhead_id : "dol", data_text : "800", data_subhead_id1 : "per", data_text1 : "800%"},
+                {data_desc_id : "1008", data_head_id : "103", data_subhead_id : "dol", data_text : "800", data_subhead_id1 : "per", data_text1 : "800%"},
+                {data_desc_id : "1008", data_head_id : "104", data_subhead_id : "dol", data_text : "800", data_subhead_id1 : "per", data_text1 : "800%"},
+                {data_desc_id : "1008", data_head_id : "105", data_subhead_id : "dol", data_text : "800", data_subhead_id1 : "per", data_text1 : "800%"},
+                {data_desc_id : "1008", data_head_id : "106", data_subhead_id : "dol", data_text : "800", data_subhead_id1 : "per", data_text1 : "800%"},
+                {data_desc_id : "1008", data_head_id : "107", data_subhead_id : "dol", data_text : "800", data_subhead_id1 : "per", data_text1 : "800%"},
+                {data_desc_id : "1008", data_head_id : "108", data_subhead_id : "dol", data_text : "800", data_subhead_id1 : "per", data_text1 : "800%"},
+                {data_desc_id : "1009", data_head_id : "97", data_subhead_id : "dol", data_text : "900", data_subhead_id1 : "per", data_text1 : "900%"},
+                {data_desc_id : "1009", data_head_id : "98", data_subhead_id : "dol", data_text : "900", data_subhead_id1 : "per", data_text1 : "900%"},
+                {data_desc_id : "1009", data_head_id : "99", data_subhead_id : "dol", data_text : "900", data_subhead_id1 : "per", data_text1 : "900%"},
+                {data_desc_id : "1009", data_head_id : "100", data_subhead_id : "dol", data_text : "900", data_subhead_id1 : "per", data_text1 : "900%"},
+                {data_desc_id : "1009", data_head_id : "101", data_subhead_id : "dol", data_text : "900", data_subhead_id1 : "per", data_text1 : "900%"},
+                {data_desc_id : "1009", data_head_id : "102", data_subhead_id : "dol", data_text : "900", data_subhead_id1 : "per", data_text1 : "900%"},
+                {data_desc_id : "1009", data_head_id : "103", data_subhead_id : "dol", data_text : "900", data_subhead_id1 : "per", data_text1 : "900%"},
+                {data_desc_id : "1009", data_head_id : "104", data_subhead_id : "dol", data_text : "900", data_subhead_id1 : "per", data_text1 : "900%"},
+                {data_desc_id : "1009", data_head_id : "105", data_subhead_id : "dol", data_text : "900", data_subhead_id1 : "per", data_text1 : "900%"},
+                {data_desc_id : "1009", data_head_id : "106", data_subhead_id : "dol", data_text : "900", data_subhead_id1 : "per", data_text1 : "900%"},
+                {data_desc_id : "1009", data_head_id : "107", data_subhead_id : "dol", data_text : "900", data_subhead_id1 : "per", data_text1 : "900%"},
+                {data_desc_id : "1009", data_head_id : "108", data_subhead_id : "dol", data_text : "900", data_subhead_id1 : "per", data_text1 : "900%"},
+                {data_desc_id : "1100", data_head_id : "97", data_subhead_id : "dol", data_text : "1000", data_subhead_id1 : "per", data_text1 : "1000%"},
+                {data_desc_id : "1100", data_head_id : "98", data_subhead_id : "dol", data_text : "1000", data_subhead_id1 : "per", data_text1 : "1000%"},
+                {data_desc_id : "1100", data_head_id : "99", data_subhead_id : "dol", data_text : "1000", data_subhead_id1 : "per", data_text1 : "1000%"},
+                {data_desc_id : "1100", data_head_id : "100", data_subhead_id : "dol", data_text : "1000", data_subhead_id1 : "per", data_text1 : "1000%"},
+                {data_desc_id : "1100", data_head_id : "101", data_subhead_id : "dol", data_text : "1000", data_subhead_id1 : "per", data_text1 : "1000%"},
+                {data_desc_id : "1100", data_head_id : "102", data_subhead_id : "dol", data_text : "1000", data_subhead_id1 : "per", data_text1 : "1000%"},
+                {data_desc_id : "1100", data_head_id : "103", data_subhead_id : "dol", data_text : "1000", data_subhead_id1 : "per", data_text1 : "1000%"},
+                {data_desc_id : "1100", data_head_id : "104", data_subhead_id : "dol", data_text : "1000", data_subhead_id1 : "per", data_text1 : "1000%"},
+                {data_desc_id : "1100", data_head_id : "105", data_subhead_id : "dol", data_text : "1000", data_subhead_id1 : "per", data_text1 : "1000%"},
+                {data_desc_id : "1100", data_head_id : "106", data_subhead_id : "dol", data_text : "1000", data_subhead_id1 : "per", data_text1 : "1000%"},
+                {data_desc_id : "1100", data_head_id : "107", data_subhead_id : "dol", data_text : "1000", data_subhead_id1 : "per", data_text1 : "1000%"},
+                {data_desc_id : "1100", data_head_id : "108", data_subhead_id : "dol", data_text : "1000", data_subhead_id1 : "per", data_text1 : "1000%"}
+              ]
+            }
+          },
+          {
+            table_name : "subTableContainer4",
+            table_width : "140px",
+            table_type : "basic",
+            headers : {
+              head_id : "fy",
+              head_text : "FY20"
+            },
+            body : {
+              data : [
+                {data_id : "101", data_text : "1000"},
+                {data_id : "102", data_text : "2000"},
+                {data_id : "103", data_text : "3000"},
+                {data_id : "104", data_text : "4000"},
+                {data_id : "105", data_text : "5000"},
+                {data_id : "106", data_text : "6000"},
+                {data_id : "107", data_text : "7000"},
+                {data_id : "108", data_text : "8000"},
+                {data_id : "109", data_text : "9000"},
+                {data_id : "110", data_text : "10000"}
+              ]
+            }
+          }
+        ]
+      };
+      $(".tableContainer").structure(options).styles(options);
+    }); 
+	</script>
+</head>
+
+<body>
+	<div class="tableContainer"></div>
+</body>

@@ -1,0 +1,12 @@
+.tableContainer{
+  display: block;
+  width: 100%;
+}
+
+.subTableContainer1 .header .column, .subTableContainer2 .header .column, .subTableContainer4 .header .column{
+  line-height: 66px;
+}
+
+.subTableContainer3{
+  margin-bottom: -24px;
+}
