@@ -1,4 +1,4 @@
-(function($) {
+(function($) { 
   $.fn.structure = function(options) {
     var settings = $.extend({}, options);
     var texthtml = "";
