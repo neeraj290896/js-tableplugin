@@ -1,3 +1,3 @@
 // Import stylesheets
-import './style.css';
-import './tabletemplate.js' ;
+import "./style.css";
+import "./tabletemplate.js";
